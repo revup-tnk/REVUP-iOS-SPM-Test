@@ -11,370 +11,382 @@ let package = Package(
             name: "REVUP",
             targets: ["REVUPTarget"]),
     ],
-    dependencies: [
-        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "13.3.0"),
-        .package(url: "https://github.com/Vungle/VungleAdsSDK-SwiftPackageManager.git", exact: "7.7.2"),
-        .package(url: "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package.git", exact: "8.1.3"),
-        .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git", exact: "13.6.2"),
-        .package(url: "https://github.com/bidmachine/BidMachine-SPM.git", exact: "3.6.1"),
-        .package(url: "https://github.com/Ogury/ogury-sdk-spm.git", exact: "5.2.3"),
-        .package(url: "https://github.com/ly-ads-network/swift-package-manager-fivead.git", exact: "3.0.1"),
-        .package(url: "https://github.com/PubMatic/OpenWrapSDK-Swift-Package.git", exact: "5.1.0"),
-        .package(url: "https://github.com/moloco/moloco-sdk-ios-spm.git", exact: "4.6.0"),
-    ],
     targets: [
         .target(
             name: "REVUPTarget",
             dependencies: [
                 .target(name: "REVUP"),
                 .target(name: "REVUPLuckyEvent"),
-                .target(name: "REVUPMediaAdManager"),
-                .target(name: "REVUPMediaAdMob"),
                 .target(name: "REVUPMediaChartBoost"),
-                .target(name: "REVUPMediaMax"),
-                .target(name: "REVUPMediaMaxAdapterAdManager"),
-                .target(name: "REVUPMediaMaxAdapterAdMob"),
-                .target(name: "REVUPMediaMaxAdapterAmazon"),
-                .target(name: "REVUPMediaMaxAdapterBidMachine"),
-                .target(name: "REVUPMediaMaxAdapterBigo"),
-                .target(name: "REVUPMediaMaxAdapterChartBoost"),
-                .target(name: "REVUPMediaMaxAdapterDTExchange"),
-                .target(name: "REVUPMediaMaxAdapterFan"),
-                .target(name: "REVUPMediaMaxAdapterInMobi"),
-                .target(name: "REVUPMediaMaxAdapterIronSource"),
-                .target(name: "REVUPMediaMaxAdapterLine"),
-                .target(name: "REVUPMediaMaxAdapterMobVista"),
-                .target(name: "REVUPMediaMaxAdapterMoloco"),
-                .target(name: "REVUPMediaMaxAdapterOgury"),
-                .target(name: "REVUPMediaMaxAdapterPangle"),
-                .target(name: "REVUPMediaMaxAdapterPubMatic"),
-                .target(name: "REVUPMediaMaxAdapterUnityAds"),
-                .target(name: "REVUPMediaMaxAdapterVungle"),
-                .target(name: "REVUPMediaPangle"),
+                .target(name: "REVUPWithChartBoost"),
                 .target(name: "REVUPMediaTnkPub"),
-                .target(name: "REVUPMediaVungle"),
-                .target(name: "REVUPMediaMaxAdapterAmazonMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterBidMachineMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterBigoMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterPangleMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterChartboostMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterFanMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterDTMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterAdManagerMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterAdMobMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterInMobiMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterIronSourceMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterLineMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterMintegralMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterMolocoMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterOguryMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterPubMaticMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterUnityAdsMediationAdapter"),
-                .target(name: "REVUPMediaMaxAdapterVungleMediationAdapter"),
-                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads"),
-                .product(name: "AppLovinSDK", package: "AppLovin-MAX-Swift-Package"),
-                .product(name: "MintegralAdSDK", package: "MintegralAdSDK-Swift-Package"),
-                .product(name: "VungleAdsSDK", package: "VungleAdsSDK-SwiftPackageManager"),
-                .product(name: "BidMachine", package: "BidMachine-SPM"),
-                .product(name: "OgurySdk", package: "ogury-sdk-spm"),
-                .product(name: "FiveAd", package: "swift-package-manager-fivead"),
-                .product(name: "OpenWrapSDK", package: "OpenWrapSDK-Swift-Package"),
-                .product(name: "MolocoSDK", package: "moloco-sdk-ios-spm"),
-                .target(name: "BigoADS"),
-                .target(name: "ChartBoost"),
-                .target(name: "DTBiOSSDK"),
-                .target(name: "Facebook"),
-                .target(name: "IASDKCore"),
-                .target(name: "InMobiSDK"),
-                .target(name: "IronSource"),
-                .target(name: "PAGAdSDK"),
                 .target(name: "TnkPubSdk"),
-                .target(name: "UnityAds"),
+                .target(name: "REVUPMediaVungle"),
+                .target(name: "VungleAdsSDK"),
+                .target(name: "REVUPMediaMax"),
+                .target(name: "REVUPMediaMaxAdapterBidMachine"),
+                .target(name: "AppLovinMediationBidMachineAdapter"),
+                .target(name: "BidMachine"),
+                .target(name: "OMSDK_Appodeal"),
+                .target(name: "REVUPMediaMaxAdapterBigo"),
+                .target(name: "REVUPMediaMaxAdapterBigoMediationAdapter"),
+                .target(name: "BigoADS"),
+                .target(name: "REVUPMediaMaxAdapterChartBoost"),
+                .target(name: "REVUPMediaMaxAdapterChartboostMediationAdapter"),
+                .target(name: "REVUPMediaMaxAdapterDTExchange"),
+                .target(name: "AppLovinMediationFyberAdapter"),
+                .target(name: "IASDKCore"),
+                .target(name: "REVUPMediaMaxAdapterFan"),
+                .target(name: "AppLovinMediationFacebookAdapter"),
+                .target(name: "FBAudienceNetwork"),
+                .target(name: "REVUPMediaMaxAdapterInMobi"),
+                .target(name: "AppLovinMediationInMobiAdapter"),
+                .target(name: "InMobiSDK"),
+                .target(name: "REVUPMediaMaxAdapterIronSource"),
+                .target(name: "REVUPMediaMaxAdapterIronSourceMediationAdapter"),
+                .target(name: "IronSourceSDK"),
+                .target(name: "REVUPMediaMaxAdapterMobVista"),
+                .target(name: "AppLovinMediationMintegralAdapter"),
+                .target(name: "MTGSDK"),
+                .target(name: "MTGSDKBanner"),
+                .target(name: "MTGSDKBidding"),
+                .target(name: "MTGSDKNewInterstitial"),
+                .target(name: "MTGSDKInterstitialVideo"),
+                .target(name: "MTGSDKReward"),
+                .target(name: "MTGSDKSplash"),
+                .target(name: "MTGSDKNativeAdvanced"),
+                .target(name: "REVUPMediaMaxAdapterMoloco"),
+                .target(name: "AppLovinMediationMolocoAdapter"),
+                .target(name: "MolocoSDK"),
+                .target(name: "REVUPMediaMaxAdapterOgury"),
+                .target(name: "AppLovinMediationOguryPresageAdapter"),
+                .target(name: "OguryWrapper"),
+                .target(name: "OguryAds"),
+                .target(name: "OguryCore"),
+                .target(name: "OMSDK"),
+                .target(name: "REVUPMediaMaxAdapterPubMatic"),
+                .target(name: "AppLovinMediationPubMaticAdapter"),
+                .target(name: "OpenWrapSDK"),
+                .target(name: "OMSDK_Pubmatic"),
+                .target(name: "REVUPMediaMaxAdapterVungle"),
+                .target(name: "REVUPMediaMaxAdapterVungleMediationAdapter"),
             ],
-            resources: [.copy("PAGAdSDK.bundle")],
+            resources: [
+                .copy("MTGResources.bundle")
+            ],
             linkerSettings: [
-              .linkedFramework("Accelerate" ),
-              .linkedLibrary("resolv"),
-              .linkedLibrary("bz2"),
-              .linkedLibrary("c++abi"),
-              .linkedLibrary("c++"),
-              .unsafeFlags(["-ObjC"])
+                .linkedFramework("Accelerate" ),
+                .linkedFramework("AdSupport"),
+                .linkedFramework("AppTrackingTransparency"),
+                .linkedFramework("AudioToolbox"),
+                .linkedFramework("AVFoundation"),
+                .linkedFramework("AVKit"),
+                .linkedFramework("AudioToolbox"),
+                .linkedFramework("CFNetwork"),
+                .linkedFramework("CoreFoundation"),
+                .linkedFramework("CoreGraphics"),
+                .linkedFramework("CoreImage"),
+                .linkedFramework("CoreLocation"),
+                .linkedFramework("CoreMedia"),
+                .linkedFramework("CoreMotion"),
+                .linkedFramework("CoreTelephony"),
+                .linkedFramework("CoreVideo"),
+                .linkedFramework("Foundation"),
+                .linkedFramework("ImageIO"),
+                .linkedFramework("JavaScriptCore"),
+                .linkedFramework("MediaPlayer"),
+                .linkedFramework("MobileCoreServices"),
+                .linkedFramework("QuartzCore"),
+                .linkedFramework("SafariServices"),
+                .linkedFramework("Security"),
+                .linkedFramework("StoreKit"),
+                .linkedFramework("SystemConfiguration"),
+                .linkedFramework("UIKit"),
+                .linkedFramework("WebKit"),
+                .linkedLibrary("bz2"),
+                .linkedLibrary("c++"),
+                .linkedLibrary("c++abi"),
+                .linkedLibrary("iconv"),
+                .linkedLibrary("resolv"),
+                .linkedLibrary("sqlite3"),
+                .linkedLibrary("xml2"),
+                .linkedLibrary("z"),
             ]
         ),
         .binaryTarget(
             name: "REVUP",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUP.zip",
-            checksum: "ea0362ef1b54e198a7828959f393a8e1ed55fc919f3ad79e9350f5ae15df9819"
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.11/REVUP.zip",
+            checksum: "e46255d0a49d3cf030e4a55c73bc25dfedf6470d62a078f9de515b5ee4964ec6"
         ),
         .binaryTarget(
             name: "REVUPLuckyEvent",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPLuckyEvent.zip",
-            checksum: "5397d5e775016270a489bd34113c1038c2c40084dc244c068e24eaede1d452e3"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaAdManager",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaAdManager.zip",
-            checksum: "c9bd7d90578874a1b827c542aca6db9689a3651336a04c726230f1472f490d72"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaAdMob",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaAdMob.zip",
-            checksum: "b1948ba0e14fc0235f02d8ec990478764817ce650550663cf52332c8c4111e8a"
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.10/REVUPLuckyEvent.zip",
+            checksum: "a79c6b77ab8d7a282d5366854dfe574d9a387a2e4c5aa5f25809d1db35f508fc"
         ),
         .binaryTarget(
             name: "REVUPMediaChartBoost",
             url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaChartBoost.zip",
-            checksum: "4a3041b8dfe6bb588516b5366aa658de4a979d8644e7809b7b2499e772c1a814"
+            checksum: "acc434326da0ec6f4b43120ca4f85f58b25b3fb68a894aa5197889059fe5c28b"
         ),
         .binaryTarget(
             name: "REVUPMediaMax",
             url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMax.zip",
-            checksum: "544fc6a91b0a5a396afb6451b98259cc80ba932f5c14fb6f66448331aa09a6c9"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterAdManager",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterAdManager.zip",
-            checksum: "e1271cd770eed2c39751647a7a7da5923b20b08a7f44d8b801df49a9d3ee5786"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterAdMob",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterAdMob.zip",
-            checksum: "d25d73ac8f68e965fbb225367d24302bd90d2f0e33969efa91b79ca8b8297f70"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterAmazon",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterAmazon.zip",
-            checksum: "c9cc2a79462dc533bd39fb706602c10cc2aa4cfc079dec4864d1898c89a49a00"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterBidMachine",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterBidMachine.zip",
-            checksum: "712239725df77c07a9d41e3cbf53113634d5b4cfef46b0d73ab529c65763ebfe"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterBigo",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterBigo.zip",
-            checksum: "131214c0d0f0e2538ea7009f3d864f3c371ea079dc1cc15f3599b8b5a610202b"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterChartBoost",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterChartBoost.zip",
-            checksum: "7d9eab20fdb55b45183f2ea6616faa58f0c0ad4109baa6bc5fe0831f7d621920"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterDTExchange",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterDTExchange.zip",
-            checksum: "8d6926a250d13cd74bdba1d3e2cd3ad03e24111326a366aec429ffa0d2502435"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterFan",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterFan.zip",
-            checksum: "68999c0db73aa254f7ede8d88b92b1b3de61c232483adac99a7080cfd121aeb2"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterInMobi",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterInMobi.zip",
-            checksum: "f28fd0c43897610faf9f60fafdc2507bbff0a75094d687871a071d20124e8f17"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterIronSource",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterIronSource.zip",
-            checksum: "bea030b3a17ddff18696b8d72799fc17c43316bc607c732fd38dffbebddf1af4"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterLine",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterLine.zip",
-            checksum: "375d2dd0ca363efa2c23173aa2fb98d10b3d5737f6abdf428deb75bf5c63b02b"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterMobVista",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterMobVista.zip",
-            checksum: "0ac39b89d6cc68a5fbc5fb96159c5e1eaff7335c25ec264e71098b65920c935e"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterMoloco",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterMoloco.zip",
-            checksum: "4ead0389937c3208400739ae3f04f1b07f68b4f30c0e3e4e81d2a9d079bbd470"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterOgury",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterOgury.zip",
-            checksum: "9ea0ba8fac02ad18c89d4ca5d959143aa9c21203ea75be9feed603f9c5bd266a"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterPangle",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterPangle.zip",
-            checksum: "1a3312d0a97d1d14427141b1c055f173003a6e91ef31303dab125215719139f8"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterPubMatic",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterPubMatic.zip",
-            checksum: "a3bf54c566a92b414500f7faa82eda743d8fc01664fd78927ad785ba1abf6f9d"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterUnityAds",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterUnityAds.zip",
-            checksum: "c37531b69a07f4f6d40ecbc630cf7efb5e005e687e15f39992a0659bdea821bd"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterVungle",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterVungle.zip",
-            checksum: "47719aa57501ed6d107299e8ea4097a1eb86185f506c446ee18a7253418b6a38"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaPangle",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaPangle.zip",
-            checksum: "aed7b031d1981608db3957c7ca39fbbfab09874372ef1cd5d950a2fcfc144bac"
+            checksum: "9624ebe60290a5fb7737e3bf95fe2359cc577a33e382a07916fcf7982dfa511a"
         ),
         .binaryTarget(
             name: "REVUPMediaTnkPub",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaTnkPub.zip",
-            checksum: "91ea07dd87f2b171bf2d8f89c8ed63fc4b349edd4e30c8af6ac30dc11a1f88ef"
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaTnkPub.xcframework.zip",
+            checksum: "4e39134effa24620cebf61895a42fa7112aeca94445e574234e4785fd7d55332"
         ),
         .binaryTarget(
             name: "REVUPMediaVungle",
             url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaVungle.zip",
-            checksum: "a4b8e1dd8ed3bbe8c85503c3ecfe7c219db796eccb13a74a9fe332ff8223eb38"
+            checksum: "d07106c3d18dcba951f02e6d9cd89e5f92bb98a261fe6dbfd46625fe4bfb9c4c"
         ),
         .binaryTarget(
-            name: "REVUPMediaMaxAdapterAmazonMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationAmazonAdMarketplaceAdapter.xcframework.zip",
-            checksum: "d8bc92071c5d17398462bad03c145e646bc97bb5bb2d3600fa675532c8df3ed9"
+            name: "REVUPWithChartBoost",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/ChartboostSDK.xcframework.zip",
+            checksum: "2c4e76dbfba4037119e368b0074880d18dba76c673f0c7e175e5b3d221ae3b6e"
         ),
         .binaryTarget(
-            name: "REVUPMediaMaxAdapterBidMachineMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationBidMachineAdapter.xcframework.zip",
-            checksum: "5e3e22b2eb48c38ef67f0bd221ff3aa8e547c2a6efba84cebf018fcdb0cd2814"
+            name: "TnkPubSdk",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.0.0/TnkPubSdk.xcframework.zip",
+            checksum: "d96cccf26eff04f2b3df845124638f3facf7703b298abaac586a4ff636a5040c"
+        ),
+        .binaryTarget(
+            name: "VungleAdsSDK",
+            url: "https://vungle2-cdn-prod.s3.amazonaws.com/sdks/ios/SwiftPackageManager/VungleAds-7.7.2.zip",
+            checksum: "992601fbf1bea916c14c898d6686800b53344f766ee45606fb91088d7a0eafa9"
+        ),
+        .binaryTarget(
+            name: "REVUPMediaMaxAdapterBidMachine",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterBidMachine.zip",
+            checksum: "0ae03a9b3404add7b6eb41b9215660edd2e29be588970b6dea80ef98b1ffedd6"
+        ),
+        .binaryTarget(
+            name: "AppLovinMediationBidMachineAdapter",
+            url: "https://artifacts.applovin.com/ios/com/applovin/mediation/bidmachine-adapter/AppLovinMediationBidMachineAdapter-3.7.1.0.0.zip",
+            checksum: "feff3dc198dd1ab4a6b160c9b4405de61099052efe062b679b6c0d0e971fe072"
+        ),
+        .binaryTarget(
+            name: "BidMachine",
+            url: "https://bidmachine-ios.s3.amazonaws.com/BidMachine/3.7.1/package/BidMachine.xcframework.zip",
+            checksum: "a033bfaccb55467a1dda8012110534726dd59337f9203db47cfafe023d5b1271"
+        ),
+        .binaryTarget(
+            name: "OMSDK_Appodeal",
+            url: "https://bidmachine-ios.s3.amazonaws.com/OMSDK_Appodeal/1.6.3/package/OMSDK_Appodeal.xcframework.zip",
+            checksum: "3e3f791957a55085954608740455c6abad2d1f4381e5a4263242289030f7976f"
+        ),
+        .binaryTarget(
+            name: "REVUPMediaMaxAdapterBigo",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterBigo.zip",
+            checksum: "7c54b1e0b4c6cc404f00f7e164f437d52059141787009d38da8deed5bb262088"
         ),
         .binaryTarget(
             name: "REVUPMediaMaxAdapterBigoMediationAdapter",
             url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationBigoAdsAdapter.xcframework.zip",
-            checksum: "4ac5da11f97c4f02cad820a7e4ac029c690b605daf446fbc417cdcd393425aaf"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterPangleMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationByteDanceAdapter.xcframework.zip",
-            checksum: "31057c928749d26ed9f01cfce58d82f3aef444b5d8fbc61f9bb33e0cd55e8396"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterChartboostMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationChartboostAdapter.xcframework.zip",
-            checksum: "d6fcfef31ac73eb3858b50fa829a1bcadbd79a32f2fa8e71f08b5dedcb56bf34"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterFanMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationFacebookAdapter.xcframework.zip",
-            checksum: "70d5bf19694d64dfa09ffff0dcb5d9774425e667e8cd991f158db86825d86937"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterDTMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationFyberAdapter.xcframework.zip",
-            checksum: "38b2f090bc7f9fa10f66777cb011c5ed0bc17e287800bb28fc855df047f106ee"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterAdMobMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationGoogleAdapter.xcframework.zip",
-            checksum: "292e61512da34477c86a38e96f857f145bff00207d47de37b59029618ab87feb"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterAdManagerMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationGoogleAdManagerAdapter.xcframework.zip",
-            checksum: "e7d0f95a8c50da4151fcc39c262d6a484e86badeb25dc37e70406fdce8fb1cbd"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterInMobiMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationInMobiAdapter.xcframework.zip",
-            checksum: "713b143c7b5db59266f9c5d3d1899e20893de918eeecf387b44640e8c9c66218"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterIronSourceMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationIronSourceAdapter.xcframework.zip",
-            checksum: "0c5b0e1dc3bb35fa56495a521f8bd23ef962314290ba518be10df2c6ced4e203"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterLineMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationLineAdapter.xcframework.zip",
-            checksum: "7c0429d473ef2eab53dba105e245ef66bd92ecca0aa7df3203086301a624e4cc"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterMintegralMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationMintegralAdapter.xcframework.zip",
-            checksum: "6e906b9c393004b03fd8f1ce549ac8123649c8afc8865319c3406c6e14dfd6de"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterMolocoMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationMolocoAdapter.xcframework.zip",
-            checksum: "2cd41cfb147dd9da24d00cd964ad10b8f9ad32dd713454f3bfd531aef6b410b5"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterOguryMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationOguryPresageAdapter.xcframework.zip",
-            checksum: "ee3b943fb69d36990d5482d3ab8f5299eddf930dfed73deeb93f18dca7f2945f"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterPubMaticMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationPubMaticAdapter.xcframework.zip",
-            checksum: "fce2ef67cb424b4a24ca066d9879f5039fbe8da079f732600d10fd954c5ac2a1"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterUnityAdsMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationUnityAdsAdapter.xcframework.zip",
-            checksum: "e9267ba2f455543eaa17014733b5ebb944741aa6c7481604b0af96f6280f8dc7"
-        ),
-        .binaryTarget(
-            name: "REVUPMediaMaxAdapterVungleMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationVungleAdapter.xcframework.zip",
-            checksum: "0b372df65f1476cc497f9c8dce69090b796fef386b6c7850de9df80c7f0f1cd3"
+            checksum: "ed640fae4c7b04da121651e44b06081fdf58c821972b9af6e35d49ba9dc4f622"
         ),
         .binaryTarget(
             name: "BigoADS",
             url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/BigoADS.xcframework.zip",
-            checksum: "8154c5b443f5dc314e2439dd31c167ccdb6541ec072dd020baa17ebd1164f6b0"
+            checksum: "9f8da4ea976fa459388b5b5c2c81e2709de35c146ab963886e19e0bd8c3a11bc"
         ),
         .binaryTarget(
-            name: "ChartBoost",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/ChartboostSDK.xcframework.zip",
-            checksum: "a3c4735e4622595aeef37570d57bbaf25ae68a2ce793305fd029d6ff7eb60138"
+            name: "REVUPMediaMaxAdapterChartBoost",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterChartBoost.zip",
+            checksum: "098ae2fc6ca3a3e1bf8402ac08951da9d5daf854c6da1f0a12f53199c3c2cebe"
         ),
         .binaryTarget(
-            name: "DTBiOSSDK",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/DTBiOSSDK.xcframework.zip",
-            checksum: "cefc9261a89959584d815b2a8160162fa4f88f8b83849ab7beaf5147c98615b5"
+            name: "REVUPMediaMaxAdapterChartboostMediationAdapter",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationChartboostAdapter.xcframework.zip",
+            checksum: "7c6c0a63ecc185069922b7b681f59b5d514b2e789518082f384fc23151b7fa91"
         ),
         .binaryTarget(
-            name: "Facebook",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/FBAudienceNetwork.xcframework.zip",
-            checksum: "94afc272e0c79b336aa91b3260149a48237af4c33efe0189773ed937197484d9"
+            name: "REVUPMediaMaxAdapterDTExchange",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.1/REVUPMediaMaxAdapterDTExchange.zip",
+            checksum: "a680b64d452fea7b4aeabbb05010dac9837d7c81cc7c842fb4fb933a547fbe2c"
+        ),
+        .binaryTarget(
+            name: "AppLovinMediationFyberAdapter",
+            url: "https://artifacts.applovin.com/ios/com/applovin/mediation/fyber-adapter/AppLovinMediationFyberAdapter-8.4.7.0.zip",
+            checksum: "eb779a6b34e8d19ebb5a1436a666332308cc559355c48063e6d202d0c850480b"
         ),
         .binaryTarget(
             name: "IASDKCore",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/IASDKCore.xcframework.zip",
-            checksum: "e7ee245233178c49cd2b3162bf7e72f0bcc9b4636b3a9b62c8b477871baaa2bf"
+            url: "https://cdn2.inner-active.mobi/fmp-sdk/files/DTExchangeSDK-iOS-SPM-8.4.7.zip",
+            checksum: "aa435d0ed740ab025b5f5fe7e63fb6674ca71d1979cd95f6f7bd5b097c242ed0"
+        ),
+        .binaryTarget(
+            name: "REVUPMediaMaxAdapterFan",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterFan.zip",
+            checksum: "ebb36030b0e2aa413cb829f15c2b732c2966f1ec8b6f06f52ff61332de83839d"
+        ),
+        .binaryTarget(
+            name: "AppLovinMediationFacebookAdapter",
+            url: "https://artifacts.applovin.com/ios/com/applovin/mediation/facebook-adapter/AppLovinMediationFacebookAdapter-6.21.1.0.zip",
+            checksum: "69069f3c153a9387a355a2e4e9ed322bcc4fcec7b0f5bc80fa9880e9c69c1ccb"
+        ),
+        .binaryTarget(
+            name: "FBAudienceNetwork",
+            url: "https://developers.facebook.com/resources/FBAudienceNetwork-6.21.1-SPM.zip",
+            checksum: "c8b3fa80b51d5511a0fe41039b924cc7eba7cbf47ca5cff67e89706034ce0316"
+        ),
+        .binaryTarget(
+            name: "REVUPMediaMaxAdapterInMobi",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterInMobi.zip",
+            checksum: "f89a22d937c7f3d692fefdb67d6a448b989b09dce5c508db0edd082b6f2e5a82"
+        ),
+        .binaryTarget(
+            name: "AppLovinMediationInMobiAdapter",
+            url: "https://artifacts.applovin.com/ios/com/applovin/mediation/inmobi-adapter/AppLovinMediationInMobiAdapter-11.3.0.1.zip",
+            checksum: "b460199258dd68d023e4d1bfb7e35bff904ea0690a741cfbe8a6df1d8405a247"
         ),
         .binaryTarget(
             name: "InMobiSDK",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/InMobiSDK.xcframework.zip",
-            checksum: "422a483d5c1355c6cfb52c6884dfc9b680ab35d4ef05b61c36b5ebc160b41c7f"
+            url: "https://dl.inmobi.com/inmobi-sdk/IM/InMobi-Ads-SDK-SPM-11.3.0.zip",
+            checksum: "82ee34f70fa91f61329dfa4702d45cdcb674a1d8f175549f0eb4bc9015bad416"
         ),
         .binaryTarget(
-            name: "IronSource",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/IronSource.xcframework.zip",
-            checksum: "caae73d0f2b59fa402d44597a292cb45683b91f54118186fbca35ba5c46d9c75"
+            name: "REVUPMediaMaxAdapterIronSource",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterIronSource.zip",
+            checksum: "742347a867c43500986990bae354f8fbc73d4d710b0e13414e2e6b0c211d5ee6"
         ),
         .binaryTarget(
-            name: "PAGAdSDK",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/PAGAdSDK.xcframework.zip",
-            checksum: "536ac01b654ab62b10f0b381f774bbfa6722f7b3065311cabf4ccc2ee2ab12d5"
+            name: "REVUPMediaMaxAdapterIronSourceMediationAdapter",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationIronSourceAdapter.xcframework.zip",
+            checksum: "00143662889262fdb4ee269c549c0032b542f2565b25efb44e6843086456477d"
         ),
         .binaryTarget(
-            name: "TnkPubSdk",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/TnkPubSdk.xcframework.zip",
-            checksum: "e966e37802cc8dfa2d4c74e87cfafc392c4ce041d967ad083c52b6f5499df3d9"
+            name: "IronSourceSDK",
+            url: "https://raw.githubusercontent.com/ironsource-mobile/iOS-sdk/master/9.4.0/IronSource9.4.0.zip",
+            checksum: "6b6915e09e4738bf2badc03ba2b91a622fba4624dc2c084cd9b330c58def9133"
         ),
         .binaryTarget(
-            name: "UnityAds",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/UnityAds.xcframework.zip",
-            checksum: "a6538057d743d6a607314262d2d65725dd9f64dc35e2f75843bd74759f47f9e8"
+            name: "REVUPMediaMaxAdapterMobVista",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterMobVista.zip",
+            checksum: "afce585cbfbc85b15c20c85e8c3bdf9a6b868933ce199cf7c8c9b23d4574afdf"
+        ),
+        .binaryTarget(
+            name: "AppLovinMediationMintegralAdapter",
+            url: "https://artifacts.applovin.com/ios/com/applovin/mediation/mintegral-adapter/AppLovinMediationMintegralAdapter-8.1.5.0.0.zip",
+            checksum: "4b959deef680d4162ccd0653ed669fa7a6e0c7f5a27e52f6fd57be6bc3c757d7"
+        ),
+        .binaryTarget(
+            name: "MTGSDK",
+            url:"https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package/releases/download/8.1.5/MTGSDK.xcframework.zip",
+            checksum: "202de3c15b9968fbefd0074b66ce065797ed7d8541b60cd9e31f49dfcd16988a"
+        ),
+        .binaryTarget(
+            name: "MTGSDKBanner",
+            url:"https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package/releases/download/8.1.5/MTGSDKBanner.xcframework.zip",
+            checksum: "1ce3deceb6d10f1c9bbd7084e4619d6dbc6c96d26285f637074dae601039ca70"
+        ),
+        .binaryTarget(
+            name: "MTGSDKBidding",
+            url:"https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package/releases/download/8.1.5/MTGSDKBidding.xcframework.zip",
+            checksum: "5ae64415e3fdb1dabafac62a2f2f71e00fe8701cca7c6198e8119f5f6fa6ef65"
+        ),
+        .binaryTarget(
+            name: "MTGSDKNewInterstitial",
+            url:"https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package/releases/download/8.1.5/MTGSDKNewInterstitial.xcframework.zip",
+            checksum: "bfa60fb9a24e889f39afe1be8491aea5ef01a6a616f784da0492c0e0593b5fb3"
+        ),
+        .binaryTarget(
+            name: "MTGSDKInterstitialVideo",
+            url:"https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package/releases/download/8.1.5/MTGSDKInterstitialVideo.xcframework.zip",
+            checksum: "c6e97612cdf3160df4e9efa49eb16f37357dc600e007316113da792f13806685"
+        ),
+        .binaryTarget(
+            name: "MTGSDKReward",
+            url:"https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package/releases/download/8.1.5/MTGSDKReward.xcframework.zip",
+            checksum: "dcf8377eebb918ac0601c0f311482fa36179f54d71cfe65bb4e37691e377ae52"
+        ),
+        .binaryTarget(
+            name: "MTGSDKSplash",
+            url:"https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package/releases/download/8.1.5/MTGSDKSplash.xcframework.zip",
+            checksum: "c6b3b4eca66746eda886f3a7cb239d382cce6ca54a9aa18cd6b5a75cae1bf286"
+        ),
+        .binaryTarget(
+            name: "MTGSDKNativeAdvanced",
+            url:"https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package/releases/download/8.1.5/MTGSDKNativeAdvanced.xcframework.zip",
+            checksum: "8136df34b868246c08fbf2e0a32e2df81d274347902d2fb71b40742b80f43510"
+        ),
+        .binaryTarget(
+            name: "REVUPMediaMaxAdapterMoloco",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterMoloco.zip",
+            checksum: "bb35e6d7e66e9499ccc00576332afc0299d1d5e5fa1f78f7cda0bf1d699d672b"
+        ),
+        .binaryTarget(
+            name: "AppLovinMediationMolocoAdapter",
+            url: "https://artifacts.applovin.com/ios/com/applovin/mediation/moloco-adapter/AppLovinMediationMolocoAdapter-4.8.1.0.zip",
+            checksum: "8081560592cf75cf24acb168aafa288433b2f5c84dc63adee5fb0c7059e025a7"
+        ),
+        .binaryTarget(
+            name: "MolocoSDK",
+            url: "https://moloco-ios-build.s3.amazonaws.com/moloco-sdk/MolocoSDK-4.8.1.zip",
+            checksum: "aaa1eb4cc09e42f14745b81cc9b384632bf204d5bc14895a8d6a5f2a6de9c0c2"
+        ),
+        .binaryTarget(
+            name: "REVUPMediaMaxAdapterOgury",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterOgury.zip",
+            checksum: "032b2d061fc29e37c7c231a054ec7cebcc2e93ce34bfd2a2baaf9ffa8c9f4202"
+        ),
+        .binaryTarget(
+            name: "AppLovinMediationOguryPresageAdapter",
+            url: "https://artifacts.applovin.com/ios/com/applovin/mediation/ogurypresage-adapter/AppLovinMediationOguryPresageAdapter-5.2.3.0.zip",
+            checksum: "c56c5aaa2ff0f15724aa5aa199ecb9d3f52bcaf1cb14f7276cb5747616a7b517"
+        ),
+        .binaryTarget(
+            name: "OguryWrapper",
+            url: "https://binaries.ogury.co/release/ios/5.2.3/OgurySdk-5.2.3.zip",
+            checksum: "f9411c03065b9aa6fc03ac6ecef0e1c4be39e9bcada492c8be4bde569011b39a"
+        ),
+        .binaryTarget(
+            name: "OguryAds",
+            url: "https://binaries.ogury.co/release/ads-ios/4.2.2/OguryAds-4.2.2.zip",
+            checksum: "c55c4cfddc0230230d3bba39e65c13bae1997b762991cdb09e514c06d8050d92"
+        ),
+        .binaryTarget(
+            name: "OguryCore",
+            url: "https://binaries.ogury.co/release/core-ios/2.2.1/OguryCore-2.2.1.zip",
+            checksum: "c611cfe91a59e3d4c35d2851ec39907985635af4bcbfd6ccbb70b9821c518a42"
+        ),
+        .binaryTarget(
+            name: "OMSDK",
+            url: "https://binaries.ogury.co/release/omsdk-ios/1.5.7/OMSDK_Ogury-1.5.7.zip",
+            checksum: "7adb6caa6359e5cf3efe5cd929628f4e67463179105e7e878db13761e40c7307"
+        ),
+        .binaryTarget(
+            name: "REVUPMediaMaxAdapterPubMatic",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterPubMatic.zip",
+            checksum: "59ba29938442ec371ac817faa8a129352cab2efab9edfb7001a7bb558961019b"
+        ),
+        .binaryTarget(
+            name: "AppLovinMediationPubMaticAdapter",
+            url: "https://artifacts.applovin.com/ios/com/applovin/mediation/pubmatic-adapter/AppLovinMediationPubMaticAdapter-5.1.1.0.zip",
+            checksum: "c722f785f79eee5c133fc14785865e274a549cb8dad90e8b3df474e650b8a07b"
+        ),
+        .binaryTarget(
+            name: "OpenWrapSDK",
+            url: "https://repo.pubmatic.com/artifactory/public-repos/ios/swift-pkg-manager/openwrapsdk/5.1.1/openwrapsdk-5.1.1.zip",
+            checksum: "e525cd238e21673aaefbc137784ae4a4293d2139c759bbb7da44480ce63d6676"
+        ),
+        .binaryTarget(
+            name: "OMSDK_Pubmatic",
+            url: "https://repo.pubmatic.com/artifactory/public-repos/ios/swift-pkg-manager/omsdk-pubmatic/1.6.3/omsdk-pubmatic-1.6.3.zip",
+            checksum: "4c80753222f11d508726ccf577cc891da66fbd8974ef970977dd6fcffc6c7022"
+        ),
+        .binaryTarget(
+            name: "REVUPMediaMaxAdapterVungle",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterVungle.zip",
+            checksum: "7ac2d5dd45384520c1925ea765dc3e8fa1b960be3d5e119cac5ad61941db3d4f"
+        ),
+        .binaryTarget(
+            name: "REVUPMediaMaxAdapterVungleMediationAdapter",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationVungleAdapter.xcframework.zip",
+            checksum: "913825ce4316d442aeaf4f81d98f5dfe5558032e5c8edea7b08e375452eeeb0d"
         ),
     ]
 )
