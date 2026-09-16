@@ -24,6 +24,7 @@ let package = Package(
                 .target(name: "REVUPMediaVungle"),
                 .target(name: "VungleAdsSDK"),
                 .target(name: "REVUPMediaMax"),
+                .target(name: "AppLovinSDK"),
                 .target(name: "REVUPMediaMaxAdapterBidMachine"),
                 .target(name: "AppLovinMediationBidMachineAdapter"),
                 .target(name: "BidMachine"),
@@ -129,9 +130,9 @@ let package = Package(
             checksum: "acc434326da0ec6f4b43120ca4f85f58b25b3fb68a894aa5197889059fe5c28b"
         ),
         .binaryTarget(
-            name: "REVUPMediaMax",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMax.zip",
-            checksum: "9624ebe60290a5fb7737e3bf95fe2359cc577a33e382a07916fcf7982dfa511a"
+            name: "REVUPWithChartBoost",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/ChartboostSDK.xcframework.zip",
+            checksum: "2c4e76dbfba4037119e368b0074880d18dba76c673f0c7e175e5b3d221ae3b6e"
         ),
         .binaryTarget(
             name: "REVUPMediaTnkPub",
@@ -139,24 +140,29 @@ let package = Package(
             checksum: "4e39134effa24620cebf61895a42fa7112aeca94445e574234e4785fd7d55332"
         ),
         .binaryTarget(
-            name: "REVUPMediaVungle",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaVungle.zip",
-            checksum: "d07106c3d18dcba951f02e6d9cd89e5f92bb98a261fe6dbfd46625fe4bfb9c4c"
-        ),
-        .binaryTarget(
-            name: "REVUPWithChartBoost",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/ChartboostSDK.xcframework.zip",
-            checksum: "2c4e76dbfba4037119e368b0074880d18dba76c673f0c7e175e5b3d221ae3b6e"
-        ),
-        .binaryTarget(
             name: "TnkPubSdk",
             url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.0.0/TnkPubSdk.xcframework.zip",
             checksum: "d96cccf26eff04f2b3df845124638f3facf7703b298abaac586a4ff636a5040c"
         ),
         .binaryTarget(
+            name: "REVUPMediaVungle",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaVungle.zip",
+            checksum: "d07106c3d18dcba951f02e6d9cd89e5f92bb98a261fe6dbfd46625fe4bfb9c4c"
+        ),
+        .binaryTarget(
             name: "VungleAdsSDK",
             url: "https://vungle2-cdn-prod.s3.amazonaws.com/sdks/ios/SwiftPackageManager/VungleAds-7.7.2.zip",
             checksum: "992601fbf1bea916c14c898d6686800b53344f766ee45606fb91088d7a0eafa9"
+        ),
+        .binaryTarget(
+            name: "REVUPMediaMax",
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMax.zip",
+            checksum: "9624ebe60290a5fb7737e3bf95fe2359cc577a33e382a07916fcf7982dfa511a"
+        ),
+        .binaryTarget(
+            name: "AppLovinSDK",
+            url: "https://artifacts.applovin.com/ios/com/applovin/applovin-sdk/AppLovinSDK-13.6.3.xcframework.zip",
+            checksum: "a65e11de25a923c4cddb5b19e852ed65b59060bfcb9b6fa065c1a8d3deabf4ae"
         ),
         .binaryTarget(
             name: "REVUPMediaMaxAdapterBidMachine",
